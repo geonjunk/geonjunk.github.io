@@ -1,690 +1,1325 @@
 <!doctype html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>고건준 | Full-Stack Developer</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: [
-              "-apple-system",
-              "BlinkMacSystemFont",
-              "Apple SD Gothic Neo",
-              "Noto Sans KR",
-              "Segoe UI",
-              "sans-serif"
-            ]
-          }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>고건준 | Full-Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Apple SD Gothic Neo",
+                "Noto Sans KR",
+                "Segoe UI",
+                "sans-serif",
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @media print {
+        @page {
+          size: A4;
+          margin: 12mm;
+        }
+
+        * {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+
+        html,
+        body {
+          background: #fff !important;
+        }
+
+        body {
+          font-size: 12px;
+          line-height: 1.55;
+        }
+
+        article {
+          margin: 0 !important;
+          max-width: none !important;
+          width: 100% !important;
+        }
+
+        .projects-section {
+          break-before: page;
+          page-break-before: always;
+        }
+
+        .others-section {
+          break-before: page;
+          page-break-before: always;
+        }
+
+        .project-page {
+          break-before: page;
+          page-break-before: always;
+          break-inside: auto;
+          border-bottom: 0 !important;
+          padding-bottom: 0 !important;
+          page-break-inside: auto;
+        }
+
+        .project-page:first-child {
+          break-before: auto;
+          page-break-before: auto;
+        }
+
+        .projects-section h2,
+        .project-page h3,
+        .project-page h4,
+        .project-page h5,
+        .project-period {
+          break-after: avoid;
+          page-break-after: avoid;
+        }
+
+        .project-page > div > div,
+        .project-page ul,
+        .project-page li,
+        .project-page .grid,
+        .project-page .rounded-lg,
+        .project-page .rounded-md,
+        img {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        img {
+          max-width: 100% !important;
         }
       }
-    };
-  </script>
-  <style>
-    @media print {
-      @page {
-        size: A4;
-        margin: 12mm;
-      }
+    </style>
+  </head>
+  <body
+    class="bg-white font-sans text-[15px] leading-7 text-zinc-800 antialiased sm:text-base"
+  >
+    <article
+      class="mx-auto my-8 w-[min(100%-28px,860px)] sm:my-14 sm:w-[min(100%-40px,860px)] print:my-0 print:w-full"
+    >
+      <header class="border-b border-zinc-300 pb-8">
+        <div
+          class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between"
+        >
+          <div class="min-w-0 flex-1">
+            <h1
+              class="mb-1 text-4xl font-bold tracking-normal text-zinc-950 sm:text-[42px] sm:leading-tight"
+            >
+              고건준
+            </h1>
+            <p class="mb-5 text-xl font-semibold text-zinc-700 sm:text-2xl">
+              Full-Stack Developer
+            </p>
 
-      * {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+            <div class="space-y-5">
+              <div class="space-y-1">
+                <p class="font-semibold text-blue-700">
+                  비즈니스 흐름을 이해하고 고객 경험을 개선하는 개발을 중요하게
+                  생각합니다.
+                </p>
+                <p>
+                  SI/SM 환경에서 고객과 직접 소통하며
+                  <span
+                    class="font-bold underline decoration-zinc-300 decoration-2 underline-offset-4"
+                    >24만 명 규모</span
+                  >의 공제회 상품 가입/지급 프로세스를 운영 및 개선했습니다.
+                </p>
+                <p>
+                  커머스 솔루션을 개선하며 동일한 서버 환경에서
+                  <span
+                    class="font-bold underline decoration-zinc-300 decoration-2 underline-offset-4"
+                    >2배 이상</span
+                  >의 성능 향상을 달성했습니다.
+                </p>
+              </div>
 
-      html,
-      body {
-        background: #fff !important;
-      }
-
-      body {
-        font-size: 12px;
-        line-height: 1.55;
-      }
-
-      article {
-        margin: 0 !important;
-        max-width: none !important;
-        width: 100% !important;
-      }
-
-      .projects-section {
-        break-before: page;
-        page-break-before: always;
-      }
-
-      .others-section {
-        break-before: page;
-        page-break-before: always;
-      }
-
-      .project-page {
-        break-before: page;
-        page-break-before: always;
-        break-inside: auto;
-        border-bottom: 0 !important;
-        padding-bottom: 0 !important;
-        page-break-inside: auto;
-      }
-
-      .project-page:first-child {
-        break-before: auto;
-        page-break-before: auto;
-      }
-
-      .projects-section h2,
-      .project-page h3,
-      .project-page h4,
-      .project-page h5,
-      .project-period {
-        break-after: avoid;
-        page-break-after: avoid;
-      }
-
-      .project-page > div > div,
-      .project-page ul,
-      .project-page li,
-      .project-page .grid,
-      .project-page .rounded-lg,
-      .project-page .rounded-md,
-      img {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      img {
-        max-width: 100% !important;
-      }
-    }
-  </style>
-</head>
-<body class="bg-white font-sans text-[15px] leading-7 text-zinc-800 antialiased sm:text-base">
-  <article class="mx-auto my-8 w-[min(100%-28px,860px)] sm:my-14 sm:w-[min(100%-40px,860px)] print:my-0 print:w-full">
-    <header class="border-b border-zinc-300 pb-8">
-      <div class="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-        <div class="min-w-0 flex-1">
-          <h1 class="mb-1 text-4xl font-bold tracking-normal text-zinc-950 sm:text-[42px] sm:leading-tight">고건준</h1>
-          <p class="mb-5 text-xl font-semibold text-zinc-700 sm:text-2xl">Full-Stack Developer</p>
-
-          <div class="space-y-5">
-            <div class="space-y-1">
-              <p class="font-semibold text-blue-700">비즈니스 흐름을 이해하고 고객 경험을 개선하는 개발을 중요하게 생각합니다.</p>
-              <p>
-                SI/SM 환경에서 고객과 직접 소통하며
-                <span class="font-bold underline decoration-zinc-300 decoration-2 underline-offset-4">24만 명 규모</span>의 공제회 상품 가입/지급 프로세스를 운영 및 개선했습니다.
-              </p>
-              <p>
-                커머스 솔루션을 개선하며 동일한 서버 환경에서
-                <span class="font-bold underline decoration-zinc-300 decoration-2 underline-offset-4">2배 이상</span>의 성능 향상을 달성했습니다.
-              </p>
-            </div>
-
-            <div class="space-y-1">
-              <p class="font-semibold text-blue-700">새로운 기술을 업무에 적용하며 문제 해결 방식을 개선하려고 합니다.</p>
-              <p>조직 단위에서 새로운 기술 변화를 제안하고, AI native 개발을 지향하며, 더 나은 문제 해결 방식을 함께 만들어가고 있습니다.</p>
+              <div class="space-y-1">
+                <p class="font-semibold text-blue-700">
+                  새로운 기술을 업무에 적용하며 문제 해결 방식을 개선하려고
+                  합니다.
+                </p>
+                <p>
+                  조직 단위에서 새로운 기술 변화를 제안하고, AI native 개발을
+                  지향하며, 더 나은 문제 해결 방식을 함께 만들어가고 있습니다.
+                </p>
+              </div>
             </div>
           </div>
         </div>
+      </header>
 
-    
-      </div>
-    </header>
+      <main class="pt-9">
+        <section class="mb-11">
+          <div class="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Contact
+              </h2>
+              <ul class="space-y-2">
+                <li>
+                  Email:
+                  <a
+                    class="text-blue-700 hover:underline print:text-zinc-800"
+                    href="mailto:koeunjun7@gmail.com"
+                    >koeunjun7@gmail.com</a
+                  >
+                </li>
+                <li>
+                  GitHub:
+                  <a
+                    class="text-blue-700 hover:underline print:text-zinc-800"
+                    href="https://github.com/geonjunk"
+                    >github.com/geonjunk</a
+                  >
+                </li>
+              </ul>
+            </div>
 
-    <main class="pt-9">
-      <section class="mb-11">
-        <div class="grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Contact</h2>
-            <ul class="space-y-2">
-              <li>Email: <a class="text-blue-700 hover:underline print:text-zinc-800" href="mailto:koeunjun7@gmail.com">koeunjun7@gmail.com</a></li>
-              <li>GitHub: <a class="text-blue-700 hover:underline print:text-zinc-800" href="https://github.com/geonjunk">github.com/geonjunk</a></li>
-            </ul>
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Blog
+              </h2>
+              <ul class="space-y-2">
+                <li>
+                  Notion:
+                  <a
+                    class="text-blue-700 hover:underline print:text-zinc-800"
+                    href="https://tourmaline-yogurt-acc.notion.site/66f527cc332a4608a7d0446f2890068e?v=8e5a2c824ec944208eceaca99ccb22de"
+                    >Study</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
+        </section>
 
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Blog</h2>
-            <ul class="space-y-2">
-              <li>Notion: <a class="text-blue-700 hover:underline print:text-zinc-800" href="https://tourmaline-yogurt-acc.notion.site/66f527cc332a4608a7d0446f2890068e?v=8e5a2c824ec944208eceaca99ccb22de">Study</a></li>
-            </ul>
+        <section class="mb-11">
+          <div class="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Education
+              </h2>
+              <ul class="space-y-3">
+                <li>
+                  <p class="font-semibold text-zinc-950">건국대학교 졸업</p>
+                  <p class="text-sm text-zinc-500 sm:text-[15px]">
+                    2017.03 ~ 2023.02
+                  </p>
+                </li>
+                <li>
+                  <p class="font-semibold text-zinc-950">
+                    서울 광문고등학교 졸업
+                  </p>
+                  <p class="text-sm text-zinc-500 sm:text-[15px]">
+                    2014.03 ~ 2017.02
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Career
+              </h2>
+              <ul class="space-y-3">
+                <li>
+                  <p class="font-semibold text-zinc-950">
+                    플래티어 ECS 부문 EC 솔루션 개발팀
+                  </p>
+                  <p class="text-sm text-zinc-500 sm:text-[15px]">
+                    2025.01.02 ~ 현재
+                  </p>
+                </li>
+                <li>
+                  <p class="font-semibold text-zinc-950">
+                    노아에이티에스 IT 개발
+                  </p>
+                  <p class="text-sm text-zinc-500 sm:text-[15px]">
+                    2023.04.03 ~ 2024.12.31
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="mb-11">
-        <div class="grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Education</h2>
-            <ul class="space-y-3">
-              <li>
-                <p class="font-semibold text-zinc-950">건국대학교 졸업</p>
-                <p class="text-sm text-zinc-500 sm:text-[15px]">2017.03 ~ 2023.02</p>
-              </li>
-              <li>
-                <p class="font-semibold text-zinc-950">서울 광문고등학교 졸업</p>
-                <p class="text-sm text-zinc-500 sm:text-[15px]">2014.03 ~ 2017.02</p>
-              </li>
-            </ul>
+        <section class="mb-11">
+          <div class="grid gap-8 md:grid-cols-2">
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Certificates
+              </h2>
+              <ul class="list-disc space-y-1 pl-5">
+                <li>AWS-SAA-C03(2026.06.08)</li>
+                <li>SQLD(2024.06.21)</li>
+                <li>정보처리기사(2022.09.02)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2
+                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+              >
+                Training
+              </h2>
+              <ul class="list-disc space-y-1 pl-5">
+                <li>NHN 백엔드 개발자 양성과정 수료 (2022.07.04~2022.09.02)</li>
+                <li>SDS 알고리즘 특강 수료 (2022.01.03~2022.01.14)</li>
+              </ul>
+            </div>
           </div>
+        </section>
 
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Career</h2>
-            <ul class="space-y-3">
-              <li>
-                <p class="font-semibold text-zinc-950">플래티어 ECS 부문 EC 솔루션 개발팀</p>
-                <p class="text-sm text-zinc-500 sm:text-[15px]">2025.01.02 ~ 현재</p>
-              </li>
-              <li>
-                <p class="font-semibold text-zinc-950">노아에이티에스 IT 개발</p>
-                <p class="text-sm text-zinc-500 sm:text-[15px]">2023.04.03 ~ 2024.12.31</p>
-              </li>
-            </ul>
+        <section class="others-section mb-11">
+          <h2
+            class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+          >
+            Others
+          </h2>
+          <ul class="list-disc space-y-1 pl-5">
+            <li>
+              한국 정보처리 학회 ACK 2022 논문 발표(2022.11.04) - MAS(Meeting
+              Auto summarization) 화상회의 자동요약 서비스
+            </li>
+            <li>네트워크 프로그래밍 학부 연구생 (2022.09~2022.12)</li>
+          </ul>
+        </section>
+
+        <section class="mb-11">
+          <h2
+            class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+          >
+            Skill
+          </h2>
+
+          <div class="space-y-7">
+            <div>
+              <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">
+                Backend
+              </h3>
+              <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
+                <li>Java, Kotlin</li>
+                <li>Spring Boot, MyBatis, JPA</li>
+                <li>MySQL, PostgreSQL, Redis</li>
+                <li>JUnit, k6</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">
+                Frontend
+              </h3>
+              <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
+                <li>React, Next.js</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>Nexacro</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">
+                기타
+              </h3>
+              <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
+                <li>AWS EC2, S3, RDS</li>
+                <li>Docker, Nginx</li>
+                <li>Git/Github, Jenkins</li>
+                <li>Claude code</li>
+                <li>MCP, FastMCP, Custom Skill</li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="mb-11">
-        <div class="grid gap-8 md:grid-cols-2">
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Certificates</h2>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>AWS-SAA-C03(2026.06.08)</li>
-              <li>SQLD(2024.06.21)</li>
-              <li>정보처리기사(2022.09.02)</li>
-            </ul>
-          </div>
+        <section class="projects-section mb-11">
+          <h2
+            class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+          >
+            Projects
+          </h2>
 
-          <div>
-            <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Training</h2>
-            <ul class="list-disc space-y-1 pl-5">
-              <li>NHN 백엔드 개발자 양성과정 수료 (2022.07.04~2022.09.02)</li>
-              <li>SDS 알고리즘 특강 수료 (2022.01.03~2022.01.14)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <div class="space-y-14">
+            <article class="project-page border-b border-zinc-200 pb-12">
+              <h3 class="text-xl font-bold leading-snug text-zinc-950">
+                군인공제회 회원관리시스템 구축/운영
+              </h3>
+              <div class="mt-5 space-y-6">
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      군인공제회의 금융 상품(퇴직급여, 예금형/적금형/연금형 상품
+                      등) 및 회원 복지 등 공제회의 회원 업무를 관리하는 시스템
+                    </li>
+                    <li>OMS와 유사한 개념의 업무 시스템</li>
+                  </ul>
+                </div>
 
-      <section class="others-section mb-11">
-        <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Others</h2>
-        <ul class="list-disc space-y-1 pl-5">
-          <li>한국 정보처리 학회 ACK 2022 논문 발표(2022.11.04) - MAS(Meeting Auto summarization) 화상회의 자동요약 서비스</li>
-          <li>네트워크 프로그래밍 학부 연구생 (2022.09~2022.12)</li>
-        </ul>
-      </section>
+                <div class="project-period">
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
+                  <p>2023.05 ~ 2024.12</p>
+                </div>
 
-      <section class="mb-11">
-        <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Skill</h2>
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
+                  <ul class="list-disc space-y-1 pl-5 sm:columns-2">
+                    <li>Nexacro N</li>
+                    <li>Oracle DB</li>
+                    <li>Oz Report</li>
+                    <li>Spring Boot, Java 8</li>
+                    <li>MyBatis, JPA</li>
+                  </ul>
+                </div>
 
-        <div class="space-y-7">
-          <div>
-            <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">Backend</h3>
-            <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-              <li>Java, Kotlin</li>
-              <li>Spring Boot, MyBatis, JPA</li>
-              <li>MySQL, PostgreSQL, Redis</li>
-              <li>JUnit, k6</li>
-            </ul>
-          </div>
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      예금형 목돈수탁 상품의 가입부터 지급, 회계 처리 전까지의
+                      프로세스 개발
+                    </li>
+                    <li>
+                      가입 신청, 승인, 입금 처리, 가입 처리의 프로세스로
+                      이루어진 가입 프로세스 개발
+                    </li>
+                    <li>
+                      기존 가입 프로세스 안정성 및 업무 효율성 증대
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          가입 자격 미달, 은행연합회 전문, 입금 전문 등
+                          인터페이스 및 업무시스템 가입에서 발생 가능한 예외
+                          구체화 및 Custom Validator로 공통화
+                        </li>
+                        <li>
+                          가입일자 그룹에서 통합된 트랜잭션 형태를 전파레벨
+                          건별로 분리
+                        </li>
+                        <li>
+                          가입, 재가입 처리 시 은행연합회 전문, 가입 처리 에러가
+                          발생한 지급 건에 대해서만 별도 처리하는 기능 개발
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      보고서 개발 작업에서 결산 및 검증 유형에 따라 보고서를
+                      분류하고 보고서 간의 정합성을 맞춰 안정성 증대
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          현업과 소통으로 마감기준, 원장 기준인지 결산 기준
+                          파악하여 보고서 쿼리 개발
+                        </li>
+                        <li>
+                          상품의 세금 특성 파악하여 세금 월, 연 마감 작업의
+                          보고서 쿼리 개발
+                        </li>
+                        <li>
+                          OZ Report 기반의 통일된 양식의 보고서 출력물 개발
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      외국조세자 법 적용에 따른 추가 요건 개발
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          회계팀 및 담당 현업과 소통으로 외국 조세자 테이블 분석
+                          및 설계
+                        </li>
+                        <li>외국세율 적용에 따른 세금 정산 예외처리 개발</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
 
-          <div>
-            <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">Frontend</h3>
-            <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-              <li>React, Next.js</li>
-              <li>HTML, CSS, JavaScript</li>
-              <li>Nexacro</li>
-            </ul>
-          </div>
+                <div>
+                  <h4 class="mb-3 font-bold text-zinc-950">
+                    주요 이슈 - 가입/지급 프로세스 개선
+                  </h4>
 
-          <div>
-            <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">기타</h3>
-            <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-              <li>AWS EC2, S3, RDS</li>
-              <li>Docker, Nginx</li>
-              <li>Git/Github, Jenkins</li>
-              <li>Claude code</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="projects-section mb-11">
-        <h2 class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950">Projects</h2>
-
-        <div class="space-y-14">
-          <article class="project-page border-b border-zinc-200 pb-12">
-            <h3 class="text-xl font-bold leading-snug text-zinc-950">군인공제회 회원관리시스템 구축/운영</h3>
-            <div class="mt-5 space-y-6">
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>군인공제회의 금융 상품(퇴직급여, 예금형/적금형/연금형 상품 등) 및 회원 복지 등 공제회의 회원 업무를 관리하는 시스템</li>
-                  <li>OMS와 유사한 개념의 업무 시스템</li>
-                </ul>
-              </div>
-
-              <div class="project-period">
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
-                <p>2023.05 ~ 2024.12</p>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
-                <ul class="list-disc space-y-1 pl-5 sm:columns-2">
-                  <li>Nexacro N</li>
-                  <li>Oracle DB</li>
-                  <li>Oz Report</li>
-                  <li>Spring Boot, Java 8</li>
-                  <li>MyBatis, JPA</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>예금형 목돈수탁 상품의 가입부터 지급, 회계 처리 전까지의 프로세스 개발</li>
-                  <li>가입 신청, 승인, 입금 처리, 가입 처리의 프로세스로 이루어진 가입 프로세스 개발</li>
-                  <li>
-                    기존 가입 프로세스 안정성 및 업무 효율성 증대
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>가입 자격 미달, 은행연합회 전문, 입금 전문 등 인터페이스 및 업무시스템 가입에서 발생 가능한 예외 구체화 및 Custom Validator로 공통화</li>
-                      <li>가입일자 그룹에서 통합된 트랜잭션 형태를 전파레벨 건별로 분리</li>
-                      <li>가입, 재가입 처리 시 은행연합회 전문, 가입 처리 에러가 발생한 지급 건에 대해서만 별도 처리하는 기능 개발</li>
-                    </ul>
-                  </li>
-                  <li>
-                    보고서 개발 작업에서 결산 및 검증 유형에 따라 보고서를 분류하고 보고서 간의 정합성을 맞춰 안정성 증대
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>현업과 소통으로 마감기준, 원장 기준인지 결산 기준 파악하여 보고서 쿼리 개발</li>
-                      <li>상품의 세금 특성 파악하여 세금 월, 연 마감 작업의 보고서 쿼리 개발</li>
-                      <li>OZ Report 기반의 통일된 양식의 보고서 출력물 개발</li>
-                    </ul>
-                  </li>
-                  <li>
-                    외국조세자 법 적용에 따른 추가 요건 개발
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>회계팀 및 담당 현업과 소통으로 외국 조세자 테이블 분석 및 설계</li>
-                      <li>외국세율 적용에 따른 세금 정산 예외처리 개발</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-3 font-bold text-zinc-950">주요 이슈 - 가입/지급 프로세스 개선</h4>
-
-                <div class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4">
-                  <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-md border border-rose-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">목돈수탁 가입 서비스</div>
-                        <div class="text-center text-zinc-400">↓ 여러 서비스 직접 참조</div>
-                        <div class="grid gap-2">
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">자격 검증 서비스</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">은행연합회 전문 검증</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">입금 전문 검증</div>
+                  <div
+                    class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                  >
+                    <div class="grid gap-4 md:grid-cols-2">
+                      <div
+                        class="rounded-md border border-rose-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-rose-700">
+                          AS-IS
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            목돈수탁 가입 서비스
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 여러 서비스 직접 참조
+                          </div>
+                          <div class="grid gap-2">
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              자격 검증 서비스
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              은행연합회 전문 검증
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              입금 전문 검증
+                            </div>
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 가입 실행
+                          </div>
+                          <div
+                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
+                          >
+                            N건 가입 = 하나의 트랜잭션
+                          </div>
+                          <p class="text-xs text-zinc-500">
+                            1건 실패 시 전체 롤백, 원인 추적과 별도 처리가
+                            어려움
+                          </p>
                         </div>
-                        <div class="text-center text-zinc-400">↓ 가입 실행</div>
-                        <div class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800">N건 가입 = 하나의 트랜잭션</div>
-                        <p class="text-xs text-zinc-500">1건 실패 시 전체 롤백, 원인 추적과 별도 처리가 어려움</p>
                       </div>
-                    </div>
 
-                    <div class="rounded-md border border-blue-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">목돈수탁 가입 서비스</div>
-                        <div class="text-center text-zinc-400">↓ 단일 진입점</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">Custom Validator</div>
-                        <div class="text-center text-zinc-400">↓ validation 재사용</div>
-                        <div class="grid gap-2">
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">자격 검증</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">은행연합회 전문 검증</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">입금 전문 검증</div>
+                      <div
+                        class="rounded-md border border-blue-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-blue-700">
+                          TO-BE
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            목돈수탁 가입 서비스
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 단일 진입점
+                          </div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            Custom Validator
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ validation 재사용
+                          </div>
+                          <div class="grid gap-2">
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              자격 검증
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              은행연합회 전문 검증
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              입금 전문 검증
+                            </div>
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 가입 실행
+                          </div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            Requires_new 전파레벨로 건별 트랜잭션 분리
+                          </div>
+                          <p class="text-xs text-zinc-500">
+                            실패 건만 별도 처리하고 정상 건은 안정적으로 처리
+                          </p>
                         </div>
-                        <div class="text-center text-zinc-400">↓ 가입 실행</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">Requires_new 전파레벨로 건별 트랜잭션 분리</div>
-                        <p class="text-xs text-zinc-500">실패 건만 별도 처리하고 정상 건은 안정적으로 처리</p>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="space-y-5">
-                  <div>
-                    <h5 class="mb-2 font-semibold text-zinc-900">문제사항</h5>
-                    <ul class="list-disc space-y-1 pl-5">
-                      <li>상품 가입 시 유효성 검증 처리가 일관성 없이 흩어져 있어 결합도가 높았고 유지보수의 어려움 존재</li>
-                      <li>다 건 가입 프로세스가 1건만 실패해도 전체 가입이 실패하여 디버깅이 어렵고 업무 생산성 떨어짐</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h5 class="mb-2 font-semibold text-zinc-900">해결방법</h5>
-                    <ul class="list-disc space-y-1 pl-5">
-                      <li>CustomValidator 도입으로 상품별 전략 서비스로 관리하여 validation 하나의 서비스로 관리</li>
-                      <li>트랜잭션 전파레벨을 Requires_new로 설정하여 건별 트랜잭션 분리</li>
-                      <li>오류에 대한 메시징 처리를 명확화하여 컬럼에 저장하고 미처리 건에 대한 별도 처리 기능 개발</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h5 class="mb-2 font-semibold text-zinc-900">결과</h5>
-                    <ul class="list-disc space-y-1 pl-5">
-                      <li>일일 1,000건 이상, 최대 20,000건 이상의 가입 업무를 안정적으로 처리</li>
-                      <li>고객 업무의 병목을 없애고 생산성 향상</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-page border-b border-zinc-200 pb-12">
-            <h3 class="text-xl font-bold leading-snug text-zinc-950">솔루션 개선</h3>
-            <div class="mt-5 space-y-6">
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>헤드리스 이커머스 솔루션의 FO/BO 화면 및 API 개선 업무</li>
-                </ul>
-              </div>
-
-              <div class="project-period">
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
-                <p>2025.04 ~ 2025.08, 2026.03 ~ 현재</p>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
-                <ul class="list-disc space-y-1 pl-5 sm:columns-2">
-                  <li>Spring Boot 3, Java 21</li>
-                  <li>TypeScript, React.js 19, Next.js 16</li>
-                  <li>PostgreSQL</li>
-                  <li>MyBatis, JPA</li>
-                  <li>Redis</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>
-                    회원 파트 개선
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>회원 유형별 로직 전략 패턴으로 리팩토링하여 유지보수성 향상</li>
-                      <li>탈퇴여부, 아이디 중복 체크 인증 시점 초기 프로세스로 변경하여 편의성 증대</li>
-                      <li>가입 관련 메서드 Validator로 모듈화하여 유지보수성 향상</li>
-                    </ul>
-                  </li>
-                  <li>
-                    이메일/알림톡 전송 파트 공통 개선
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>환경변수, DB로 관리하던 이메일 메타정보 Redis로 전환</li>
-                      <li>chunk 단위 bulk 전송 기능 도입</li>
-                      <li>성능 10배 향상</li>
-                    </ul>
-                  </li>
-                  <li>
-                    전시 성능 개선
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>참조성 데이터는 Next cache, Redis cache 중복 캐싱 적용</li>
-                      <li>이외 변경이 잦지 않은 전시 데이터는 Redis 백엔드 캐싱 적용</li>
-                      <li>jitter TTL 도입</li>
-                      <li>Redis 기반 rate limiter 및 circuit breaker 도입</li>
-                      <li>k6 기반 동시 사용자(VU) step-load 부하 시나리오에서 동일 시간 대비 RPS 2배 개선</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">이슈 사항 - 전시 성능 개선</h4>
-
-                <div class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4">
-                  <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-md border border-rose-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">조회 발생</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-zinc-200 bg-white px-3 py-2">클라이언트</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-zinc-200 bg-white px-3 py-2">백엔드 서버</div>
-                        <div class="text-center text-zinc-400">↓ 매 요청 조회</div>
-                        <div class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800">화면에 필요한 값 리턴</div>
-                        <p class="text-xs text-zinc-500">반복 조회가 누적되어 주요 화면 트래픽 집중 시 응답이 불안정</p>
-                      </div>
+                  <div class="space-y-5">
+                    <div>
+                      <h5 class="mb-2 font-semibold text-zinc-900">문제사항</h5>
+                      <ul class="list-disc space-y-1 pl-5">
+                        <li>
+                          상품 가입 시 유효성 검증 처리가 일관성 없이 흩어져
+                          있어 결합도가 높았고 유지보수의 어려움 존재
+                        </li>
+                        <li>
+                          다 건 가입 프로세스가 1건만 실패해도 전체 가입이
+                          실패하여 디버깅이 어렵고 업무 생산성 떨어짐
+                        </li>
+                      </ul>
                     </div>
 
-                    <div class="rounded-md border border-blue-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">조회 발생</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-zinc-200 bg-white px-3 py-2">브라우저</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">Next 서버 캐싱 체크</div>
-                        <div class="grid gap-2 md:grid-cols-2">
-                          <div class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800">HIT → 바로 리턴</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">MISS → 백엔드 서버</div>
+                    <div>
+                      <h5 class="mb-2 font-semibold text-zinc-900">해결방법</h5>
+                      <ul class="list-disc space-y-1 pl-5">
+                        <li>
+                          CustomValidator 도입으로 상품별 전략 서비스로 관리하여
+                          validation 하나의 서비스로 관리
+                        </li>
+                        <li>
+                          트랜잭션 전파레벨을 Requires_new로 설정하여 건별
+                          트랜잭션 분리
+                        </li>
+                        <li>
+                          오류에 대한 메시징 처리를 명확화하여 컬럼에 저장하고
+                          미처리 건에 대한 별도 처리 기능 개발
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h5 class="mb-2 font-semibold text-zinc-900">결과</h5>
+                      <ul class="list-disc space-y-1 pl-5">
+                        <li>
+                          일일 1,000건 이상, 최대 20,000건 이상의 가입 업무를
+                          안정적으로 처리
+                        </li>
+                        <li>고객 업무의 병목을 없애고 생산성 향상</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-page border-b border-zinc-200 pb-12">
+              <h3 class="text-xl font-bold leading-snug text-zinc-950">
+                솔루션 개선
+              </h3>
+              <div class="mt-5 space-y-6">
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      헤드리스 이커머스 솔루션의 FO/BO 화면 및 API 개선 업무
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="project-period">
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
+                  <p>2025.04 ~ 2025.08, 2026.03 ~ 현재</p>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
+                  <ul class="list-disc space-y-1 pl-5 sm:columns-2">
+                    <li>Spring Boot 3, Java 21</li>
+                    <li>TypeScript, React.js 19, Next.js 16</li>
+                    <li>PostgreSQL</li>
+                    <li>MyBatis, JPA</li>
+                    <li>Redis</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      회원 파트 개선
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          회원 유형별 로직 전략 패턴으로 리팩토링하여 유지보수성
+                          향상
+                        </li>
+                        <li>
+                          탈퇴여부, 아이디 중복 체크 인증 시점 초기 프로세스로
+                          변경하여 편의성 증대
+                        </li>
+                        <li>
+                          가입 관련 메서드 Validator로 모듈화하여 유지보수성
+                          향상
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      이메일/알림톡 전송 파트 공통 개선
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          환경변수, DB로 관리하던 이메일 메타정보 Redis로 전환
+                        </li>
+                        <li>chunk 단위 bulk 전송 기능 도입</li>
+                        <li>성능 10배 향상</li>
+                      </ul>
+                    </li>
+                    <li>
+                      전시 성능 개선
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          참조성 데이터는 Next cache, Redis cache 중복 캐싱 적용
+                        </li>
+                        <li>
+                          이외 변경이 잦지 않은 전시 데이터는 Redis 백엔드 캐싱
+                          적용
+                        </li>
+                        <li>jitter TTL 도입</li>
+                        <li>Redis 기반 rate limiter 및 circuit breaker 도입</li>
+                        <li>
+                          k6 기반 동시 사용자(VU) step-load 부하 시나리오에서
+                          동일 시간 대비 RPS 2배 개선
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">
+                    이슈 사항 - 전시 성능 개선
+                  </h4>
+
+                  <div
+                    class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                  >
+                    <div class="grid gap-4 md:grid-cols-2">
+                      <div
+                        class="rounded-md border border-rose-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-rose-700">
+                          AS-IS
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            조회 발생
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-zinc-200 bg-white px-3 py-2"
+                          >
+                            클라이언트
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-zinc-200 bg-white px-3 py-2"
+                          >
+                            백엔드 서버
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 매 요청 조회
+                          </div>
+                          <div
+                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
+                          >
+                            화면에 필요한 값 리턴
+                          </div>
+                          <p class="text-xs text-zinc-500">
+                            반복 조회가 누적되어 주요 화면 트래픽 집중 시 응답이
+                            불안정
+                          </p>
                         </div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">Redis 체크</div>
-                        <div class="grid gap-2 md:grid-cols-2">
-                          <div class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800">HIT → 리턴</div>
-                          <div class="rounded border border-zinc-200 bg-white px-3 py-2">MISS → 조회 후 캐싱</div>
+                      </div>
+
+                      <div
+                        class="rounded-md border border-blue-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-blue-700">
+                          TO-BE
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            조회 발생
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-zinc-200 bg-white px-3 py-2"
+                          >
+                            브라우저
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            Next 서버 캐싱 체크
+                          </div>
+                          <div class="grid gap-2 md:grid-cols-2">
+                            <div
+                              class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800"
+                            >
+                              HIT → 바로 리턴
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              MISS → 백엔드 서버
+                            </div>
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            Redis 체크
+                          </div>
+                          <div class="grid gap-2 md:grid-cols-2">
+                            <div
+                              class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800"
+                            >
+                              HIT → 리턴
+                            </div>
+                            <div
+                              class="rounded border border-zinc-200 bg-white px-3 py-2"
+                            >
+                              MISS → 조회 후 캐싱
+                            </div>
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            화면에 필요한 값 리턴
+                          </div>
                         </div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">화면에 필요한 값 리턴</div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      솔루션 FO 주요 화면(메인, 상품 상세, 브랜드샵, 기획전)에
+                      트래픽이 몰리는 상황에 연결이 불안정한 문제
+                    </li>
+                    <li>
+                      참조 정보(PG, 아이콘, 카테고리, 마일리지 정책 등)나
+                      개인화되어 있지 않고 자주 변하지 않는 기획전, 브랜드샵
+                      데이터가 매번 반복되는 구조로 불필요한 조회 발생
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">해결방안</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      클라이언트와 상호작용이 불필요한 서버 컴포넌트에서
+                      호출되는 참조성 데이터는 Next fetch cache, 서버 Redis
+                      cache 이중 캐싱 적용
+                    </li>
+                    <li>2배의 TTL로 서버 Redis cache 설정</li>
+                    <li>
+                      이외 개인화되지 않고 자주 변하지 않는 전시 데이터는 Redis
+                      Cache만 적용
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>동일 250 VU에서 15분간 step-load test 진행 결과</li>
+                    <li>RPS는 기존 65에서 120으로 약 2배 증가</li>
+                    <li>p95는 기존 8s에서 3.3s로 개선</li>
+                    <li>부하가 없는 상황에도 유저의 전시 UI 경험 개선</li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-page border-b border-zinc-200 pb-12">
+              <h3 class="text-xl font-bold leading-snug text-zinc-950">
+                대명 아임레디몰 리뉴얼 프로젝트 캐시백 기능 개선
+              </h3>
+              <div class="mt-5 space-y-6">
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      솔루션 기반으로 대명 아임레디몰을 재구축하는 프로젝트
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="project-period">
+                  <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
+                  <p>2025.09 ~ 2026.03</p>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
+                  <ul class="list-disc space-y-1 pl-5 sm:columns-2">
+                    <li>Spring Boot 3, Java 21</li>
+                    <li>TypeScript, React.js 19, Next.js 16</li>
+                    <li>PostgreSQL</li>
+                    <li>MyBatis</li>
+                    <li>Redis</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">기여한 사항</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>솔루션 베이스 프로모션, 배송 파트 개발</li>
+                    <li>
+                      프로모션 파트 쿠폰, 포인트, 최대혜택 기능 개발
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>캐시백, 난수 쿠폰/포인트 확장 개발</li>
+                        <li>
+                          캐시백, 포인트 일괄 지급 chunk 단위 bulk 쿼리 적용으로
+                          성능 개선
+                        </li>
+                        <li>
+                          최대 혜택 신규 쿠폰 유형/포인트 유형 계산 로직 추가
+                        </li>
+                        <li>
+                          쿠폰/마일리지 사용자 발급 시 DB와 사용자 로직 비교
+                          로직 추가로 정합성 향상
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      배송 파트 수정 개발
+                      <ul
+                        class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700"
+                      >
+                        <li>
+                          출고 시작부터 배송 완료까지의 프로세스 수정 개발
+                        </li>
+                        <li>무 배송 상품 배송 로직 추가</li>
+                        <li>스윗트래커 외부 인터페이스 연동 개발</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">
+                    이슈사항 - 캐시백 지급 개선
+                  </h4>
+
+                  <div
+                    class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                  >
+                    <div class="grid gap-4 md:grid-cols-2">
+                      <div
+                        class="rounded-md border border-rose-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-rose-700">
+                          AS-IS
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            캐시백 지급 요청
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-zinc-200 bg-white px-3 py-2"
+                          >
+                            사용자 조건 로직으로 지급 대상 산정
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 검증 부족
+                          </div>
+                          <div
+                            class="rounded border border-zinc-200 bg-white px-3 py-2"
+                          >
+                            대상별 단건 insert/update 반복
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
+                          >
+                            DB round trip 증가
+                          </div>
+                          <p class="text-xs text-zinc-500">
+                            대량 지급 시 처리 시간이 늘고, DB 기준과 조건 로직
+                            결과가 어긋날 수 있음
+                          </p>
+                        </div>
+                      </div>
+
+                      <div
+                        class="rounded-md border border-blue-200 bg-white p-4"
+                      >
+                        <p class="mb-3 text-sm font-bold text-blue-700">
+                          TO-BE
+                        </p>
+                        <div class="space-y-2 text-sm">
+                          <div
+                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                          >
+                            캐시백 지급 요청
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            사용자 조건 로직 대상 산정
+                          </div>
+                          <div class="text-center text-zinc-400">＋</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            DB 기준 지급 가능 대상 조회
+                          </div>
+                          <div class="text-center text-zinc-400">
+                            ↓ 비교 검증
+                          </div>
+                          <div
+                            class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
+                          >
+                            오지급·누락·중복 발급 방지
+                          </div>
+                          <div class="text-center text-zinc-400">↓</div>
+                          <div
+                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                          >
+                            chunk 분할 → bulk insert/update
+                          </div>
+                          <p class="text-xs text-zinc-500">
+                            검증 단계를 추가하면서도 대량 지급 성능 병목 완화
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      회원의 자산과 관련된 기능으로 정확성이 중요하고, 단건씩
+                      지급이 되지만 건수가 많아 성능의 한계도 존재
+                    </li>
+                    <li>
+                      대량 지급 데이터를 단건 insert/update 방식으로 처리하면 DB
+                      round trip이 많아지고 처리 시간이 증가한다고 판단
+                    </li>
+                    <li>
+                      지급 대상자는 사용자 조건 로직을 통해 산정되지만, 실제
+                      지급 시점의 DB 데이터와 불일치할 가능성이 있어 지급 전
+                      비교 검증 로직이 필요하다고 판단
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">해결 방안</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      쿠폰 및 마일리지 사용자 발급 시 사용자 조건 로직으로
+                      산정된 지급 대상과 실제 DB 기준 지급 가능 대상을 비교하는
+                      검증 로직 추가
+                    </li>
+                    <li>
+                      validation 로직을 백오피스 API에서 한번에 validation 관리
+                    </li>
+                    <li>
+                      캐시백 및 포인트 일괄 지급 로직에서 지급 대상 데이터를
+                      chunk 단위로 분할하고, 각 chunk마다 bulk insert/update
+                      쿼리를 적용
+                    </li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      대량 지급 프로세스의 성능 병목을 완화하고, 지급 대상
+                      산정부터 실제 발급까지의 검증 단계를 추가하여
+                      오지급·누락·중복 발급 가능성을 제거했습니다.
+                    </li>
+                    <li>
+                      로그 기반 단위 테스트 측정으로 5배 향상되었습니다.
+                      (nanoTime)
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-page border-b border-zinc-200 pb-12">
+              <h3 class="text-xl font-bold leading-snug text-zinc-950">
+                기타 개발 - Redis 조회 MCP 및 안전 쓰기 Skill 개발
+              </h3>
+              <div
+                class="mt-5 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+              >
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-md border border-rose-200 bg-white p-4">
+                    <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
+                    <div class="space-y-2 text-sm">
+                      <div
+                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                      >
+                        AI 에이전트로 Redis 운영 작업 요청
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-zinc-200 bg-white px-3 py-2"
+                      >
+                        조회와 쓰기 작업 경계가 불명확
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-zinc-200 bg-white px-3 py-2"
+                      >
+                        운영 대상, DB 용도, 키 패턴을 수동 확인
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
+                      >
+                        오조회·오삭제·개인정보 노출 위험
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="rounded-md border border-blue-200 bg-white p-4">
+                    <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
+                    <div class="space-y-2 text-sm">
+                      <div
+                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                      >
+                        작업 성격 기준으로 도구 분리
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div class="grid gap-2 md:grid-cols-2">
+                        <div
+                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                        >
+                          조회 → 읽기 전용 MCP
+                        </div>
+                        <div
+                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                        >
+                          변경 → 안전 쓰기 Skill
+                        </div>
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
+                      >
+                        SCAN 조회, 민감정보 마스킹, 결과 상한 적용
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
+                      >
+                        dry-run 승인 기반 Redis 운영 절차 표준화
                       </div>
                     </div>
                   </div>
                 </div>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>솔루션 FO 주요 화면(메인, 상품 상세, 브랜드샵, 기획전)에 트래픽이 몰리는 상황에 연결이 불안정한 문제</li>
-                  <li>참조 정보(PG, 아이콘, 카테고리, 마일리지 정책 등)나 개인화되어 있지 않고 자주 변하지 않는 기획전, 브랜드샵 데이터가 매번 반복되는 구조로 불필요한 조회 발생</li>
-                </ul>
               </div>
+              <div class="mt-5 space-y-6">
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">문제 사항</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      Redis가 cache, ratelimit, stream, nextcache 등 여러 용도로
+                      분리되어 있어 어떤 인덱스를 조회해야할지 혼동 존재
+                    </li>
+                    <li>
+                      AI 도구에 Redis 접근을 허용할 때 조회와 쓰기 권한을 함께
+                      열어두면 실수로 데이터가 변경될 위험 존재
+                    </li>
+                    <li>
+                      스트림 DLQ 재처리는 payload 확인, 원본 스트림 재적재, DLQ
+                      정리 작업 등 동일한 단계별 프로세스를 진행할 필요성 존재
+                    </li>
+                  </ul>
+                </div>
 
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">해결방안</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>클라이언트와 상호작용이 불필요한 서버 컴포넌트에서 호출되는 참조성 데이터는 Next fetch cache, 서버 Redis cache 이중 캐싱 적용</li>
-                  <li>2배의 TTL로 서버 Redis cache 설정</li>
-                  <li>이외 개인화되지 않고 자주 변하지 않는 전시 데이터는 Redis Cache만 적용</li>
-                </ul>
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">도입 내용</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      FastMCP 기반 Redis 조회 전용 MCP를 자연어를 통한 업무별
+                      데이터 조회 기능 제공
+                    </li>
+                    <li>
+                      KEYS 전체 스캔 대신 SCAN 기반 탐색을 사용하고, 운영 환경
+                      조회 시 질문을 통해 진행 여부 한번 더 체크하도록 구성
+                    </li>
+                    <li>
+                      조회 결과 반환 전 이메일·전화번호 등 민감정보 마스킹과
+                      길이 제한을 적용하여 노출 범위 최소화
+                    </li>
+                    <li>
+                      Redis CUD 작업은 Custom Skill로 분리하여 dry-run → 사용자
+                      확인 → apply 흐름을 강제
+                    </li>
+                    <li>
+                      KEYS 기반 일괄 데이터 조작 작업은 스크립트 레벨에서 거부
+                    </li>
+                    <li>
+                      Python 표준 라이브러리 기반 RESP 클라이언트를 구현하여
+                      redis-cli나 Docker 없이도 Redis 작업 진행
+                    </li>
+                  </ul>
+                </div>
               </div>
+            </article>
 
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>동일 250 VU에서 15분간 step-load test 진행 결과</li>
-                  <li>RPS는 기존 65에서 120으로 약 2배 증가</li>
-                  <li>p95는 기존 8s에서 3.3s로 개선</li>
-                  <li>부하가 없는 상황에도 유저의 전시 UI 경험 개선</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-page border-b border-zinc-200 pb-12">
-            <h3 class="text-xl font-bold leading-snug text-zinc-950">대명 아임레디몰 리뉴얼 프로젝트 캐시백 기능 개선</h3>
-            <div class="mt-5 space-y-6">
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 요약</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>솔루션 기반으로 대명 아임레디몰을 재구축하는 프로젝트</li>
-                </ul>
-              </div>
-
-              <div class="project-period">
-                <h4 class="mb-2 font-bold text-zinc-950">프로젝트 기간</h4>
-                <p>2025.09 ~ 2026.03</p>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">사용 기술</h4>
-                <ul class="list-disc space-y-1 pl-5 sm:columns-2">
-                  <li>Spring Boot 3, Java 21</li>
-                  <li>TypeScript, React.js 19, Next.js 16</li>
-                  <li>PostgreSQL</li>
-                  <li>MyBatis</li>
-                  <li>Redis</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">기여한 사항</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>솔루션 베이스 프로모션, 배송 파트 개발</li>
-                  <li>
-                    프로모션 파트 쿠폰, 포인트, 최대혜택 기능 개발
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>캐시백, 난수 쿠폰/포인트 확장 개발</li>
-                      <li>캐시백, 포인트 일괄 지급 chunk 단위 bulk 쿼리 적용으로 성능 개선</li>
-                      <li>최대 혜택 신규 쿠폰 유형/포인트 유형 계산 로직 추가</li>
-                      <li>쿠폰/마일리지 사용자 발급 시 DB와 사용자 로직 비교 로직 추가로 정합성 향상</li>
-                    </ul>
-                  </li>
-                  <li>
-                    배송 파트 수정 개발
-                    <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
-                      <li>출고 시작부터 배송 완료까지의 프로세스 수정 개발</li>
-                      <li>무 배송 상품 배송 로직 추가</li>
-                      <li>스윗트래커 외부 인터페이스 연동 개발</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">이슈사항 - 캐시백 지급 개선</h4>
-
-                <div class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4">
-                  <div class="grid gap-4 md:grid-cols-2">
-                    <div class="rounded-md border border-rose-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">캐시백 지급 요청</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-zinc-200 bg-white px-3 py-2">사용자 조건 로직으로 지급 대상 산정</div>
-                        <div class="text-center text-zinc-400">↓ 검증 부족</div>
-                        <div class="rounded border border-zinc-200 bg-white px-3 py-2">대상별 단건 insert/update 반복</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800">DB round trip 증가</div>
-                        <p class="text-xs text-zinc-500">대량 지급 시 처리 시간이 늘고, DB 기준과 조건 로직 결과가 어긋날 수 있음</p>
+            <article class="project-page">
+              <h3 class="text-xl font-bold leading-snug text-zinc-950">
+                기타 개발 - harness-update skill 개발
+              </h3>
+              <div
+                class="mt-5 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+              >
+                <div class="grid gap-4 md:grid-cols-2">
+                  <div class="rounded-md border border-rose-200 bg-white p-4">
+                    <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
+                    <div class="space-y-2 text-sm">
+                      <div
+                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                      >
+                        custom MCP / plugin / skill 사용
                       </div>
-                    </div>
-
-                    <div class="rounded-md border border-blue-200 bg-white p-4">
-                      <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                      <div class="space-y-2 text-sm">
-                        <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">캐시백 지급 요청</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">사용자 조건 로직 대상 산정</div>
-                        <div class="text-center text-zinc-400">＋</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">DB 기준 지급 가능 대상 조회</div>
-                        <div class="text-center text-zinc-400">↓ 비교 검증</div>
-                        <div class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800">오지급·누락·중복 발급 방지</div>
-                        <div class="text-center text-zinc-400">↓</div>
-                        <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">chunk 분할 → bulk insert/update</div>
-                        <p class="text-xs text-zinc-500">검증 단계를 추가하면서도 대량 지급 성능 병목 완화</p>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-zinc-200 bg-white px-3 py-2"
+                      >
+                        각 도구 버전 직접 확인
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-zinc-200 bg-white px-3 py-2"
+                      >
+                        마켓플레이스 / Git 저장소 수동 비교
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-zinc-200 bg-white px-3 py-2"
+                      >
+                        pull / reinstall 명령 수동 실행
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
+                      >
+                        업데이트 누락 및 반복 작업 발생
                       </div>
                     </div>
                   </div>
-                </div>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>회원의 자산과 관련된 기능으로 정확성이 중요하고, 단건씩 지급이 되지만 건수가 많아 성능의 한계도 존재</li>
-                  <li>대량 지급 데이터를 단건 insert/update 방식으로 처리하면 DB round trip이 많아지고 처리 시간이 증가한다고 판단</li>
-                  <li>지급 대상자는 사용자 조건 로직을 통해 산정되지만, 실제 지급 시점의 DB 데이터와 불일치할 가능성이 있어 지급 전 비교 검증 로직이 필요하다고 판단</li>
-                </ul>
-              </div>
 
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">해결 방안</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>쿠폰 및 마일리지 사용자 발급 시 사용자 조건 로직으로 산정된 지급 대상과 실제 DB 기준 지급 가능 대상을 비교하는 검증 로직 추가</li>
-                  <li>validation 로직을 백오피스 API에서 한번에 validation 관리</li>
-                  <li>캐시백 및 포인트 일괄 지급 로직에서 지급 대상 데이터를 chunk 단위로 분할하고, 각 chunk마다 bulk insert/update 쿼리를 적용</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>대량 지급 프로세스의 성능 병목을 완화하고, 지급 대상 산정부터 실제 발급까지의 검증 단계를 추가하여 오지급·누락·중복 발급 가능성을 제거했습니다.</li>
-                  <li>로그 기반 단위 테스트 측정으로 5배 향상되었습니다. (nanoTime)</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-page">
-            <h3 class="text-xl font-bold leading-snug text-zinc-950">기타 개발 - harness-update skill 개발</h3>
-            <div class="mt-5 rounded-lg border border-zinc-300 bg-zinc-50 p-4">
-              <div class="grid gap-4 md:grid-cols-2">
-                <div class="rounded-md border border-rose-200 bg-white p-4">
-                  <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                  <div class="space-y-2 text-sm">
-                    <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">custom MCP / plugin / skill 사용</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-zinc-200 bg-white px-3 py-2">각 도구 버전 직접 확인</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-zinc-200 bg-white px-3 py-2">마켓플레이스 / Git 저장소 수동 비교</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-zinc-200 bg-white px-3 py-2">pull / reinstall 명령 수동 실행</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800">업데이트 누락 및 반복 작업 발생</div>
-                  </div>
-                </div>
-
-                <div class="rounded-md border border-blue-200 bg-white p-4">
-                  <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                  <div class="space-y-2 text-sm">
-                    <div class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold">harness-update skill 실행</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">Python 스크립트로 버전 수집</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="grid gap-2 md:grid-cols-2">
-                      <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2">마켓플레이스 ↔ 로컬 비교</div>
-                      <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2">Git 최신 형상 ↔ 로컬 비교</div>
+                  <div class="rounded-md border border-blue-200 bg-white p-4">
+                    <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
+                    <div class="space-y-2 text-sm">
+                      <div
+                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
+                      >
+                        harness-update skill 실행
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                      >
+                        Python 스크립트로 버전 수집
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div class="grid gap-2 md:grid-cols-2">
+                        <div
+                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
+                        >
+                          마켓플레이스 ↔ 로컬 비교
+                        </div>
+                        <div
+                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
+                        >
+                          Git 최신 형상 ↔ 로컬 비교
+                        </div>
+                      </div>
+                      <div class="text-center text-zinc-400">
+                        ↓ 차이가 있을 때만
+                      </div>
+                      <div
+                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
+                      >
+                        pull / reinstall 자동 실행
+                      </div>
+                      <div class="text-center text-zinc-400">↓</div>
+                      <div
+                        class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
+                      >
+                        리턴값만 출력하여 토큰 사용량 최소화
+                      </div>
                     </div>
-                    <div class="text-center text-zinc-400">↓ 차이가 있을 때만</div>
-                    <div class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800">pull / reinstall 자동 실행</div>
-                    <div class="text-center text-zinc-400">↓</div>
-                    <div class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800">리턴값만 출력하여 토큰 사용량 최소화</div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="mt-5 space-y-6">
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">문제 사항</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>Claude Code를 사용하여 custom MCP나 외부 plugin을 사용할 때 자동으로 업데이트가 되지 않고 일괄 수동 업데이트해야 하는 불편함 존재</li>
-                </ul>
-              </div>
+              <div class="mt-5 space-y-6">
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">문제 사항</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      Claude Code를 사용하여 custom MCP나 외부 plugin을 사용할
+                      때 자동으로 업데이트가 되지 않고 일괄 수동 업데이트해야
+                      하는 불편함 존재
+                    </li>
+                  </ul>
+                </div>
 
-              <div>
-                <h4 class="mb-2 font-bold text-zinc-950">도입 내용</h4>
-                <ul class="list-disc space-y-1 pl-5">
-                  <li>Python 스크립트 기반으로 MCP, plugin, skill 업데이트하는 Custom skill 도입</li>
-                  <li>마켓플레이스와 로컬 버전을 비교하여 다를 시 업데이트</li>
-                  <li>Git 레포의 최신 형상과 로컬 형상을 비교하여 다를 시 pull 및 재설치 커맨드 동작</li>
-                  <li>토큰 사용량 최적화</li>
-                  <li>단순 스크립트를 돌리고 해당 스크립트의 리턴값만 출력하게 하여 출력 토큰 최소화</li>
-                  <li>적은 비용의 모델로 동작하도록 스킬 구성</li>
-                </ul>
+                <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">도입 내용</h4>
+                  <ul class="list-disc space-y-1 pl-5">
+                    <li>
+                      Python 스크립트 기반으로 MCP, plugin, skill 업데이트하는
+                      Custom skill 도입
+                    </li>
+                    <li>
+                      마켓플레이스와 로컬 버전을 비교하여 다를 시 업데이트
+                    </li>
+                    <li>
+                      Git 레포의 최신 형상과 로컬 형상을 비교하여 다를 시 pull
+                      및 재설치 커맨드 동작
+                    </li>
+                    <li>토큰 사용량 최적화</li>
+                    <li>
+                      단순 스크립트를 돌리고 해당 스크립트의 리턴값만 출력하게
+                      하여 출력 토큰 최소화
+                    </li>
+                    <li>적은 비용의 모델로 동작하도록 스킬 구성</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-    </main>
-  </article>
-</body>
+            </article>
+          </div>
+        </section>
+      </main>
+    </article>
+  </body>
 </html>
-
