@@ -5,105 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>고건준 | Full-Stack Developer</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: [
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "Apple SD Gothic Neo",
-                "Noto Sans KR",
-                "Segoe UI",
-                "sans-serif",
-              ],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      @media print {
-        @page {
-          size: A4;
-          margin: 12mm;
-        }
-
-        * {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-
-        html,
-        body {
-          background: #fff !important;
-        }
-
-        body {
-          font-size: 12px;
-          line-height: 1.55;
-        }
-
-        article {
-          margin: 0 !important;
-          max-width: none !important;
-          width: 100% !important;
-        }
-
-        .projects-section {
-          break-before: page;
-          page-break-before: always;
-        }
-
-        .others-section {
-          break-before: page;
-          page-break-before: always;
-        }
-
-        .project-page {
-          break-before: page;
-          page-break-before: always;
-          break-inside: auto;
-          border-bottom: 0 !important;
-          padding-bottom: 0 !important;
-          page-break-inside: auto;
-        }
-
-        .project-page:first-child {
-          break-before: auto;
-          page-break-before: auto;
-        }
-
-        .projects-section h2,
-        .project-page h3,
-        .project-page h4,
-        .project-page h5,
-        .project-period {
-          break-after: avoid;
-          page-break-after: avoid;
-        }
-
-        .project-page > div > div,
-        .project-page ul,
-        .project-page li,
-        .project-page .grid,
-        .project-page .rounded-lg,
-        .project-page .rounded-md,
-        img {
-          break-inside: avoid;
-          page-break-inside: avoid;
-        }
-
-        img {
-          max-width: 100% !important;
-        }
-      }
-    </style>
+    <script src="./js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body
     class="bg-white font-sans text-[15px] leading-7 text-zinc-800 antialiased sm:text-base"
   >
+    <nav class="portfolio-nav" aria-label="포트폴리오 섹션">
+      <p class="nav-label">CONTENTS</p>
+      <div id="section-links"></div>
+    </nav>
+    <div class="floating-tools" aria-label="화면 도구">
+      <button id="theme-toggle" type="button" aria-label="다크 모드 전환" title="다크 모드">◐</button>
+      <button type="button" onclick="window.print()" aria-label="인쇄 또는 PDF 저장" title="인쇄 / PDF 저장">↗</button>
+    </div>
     <article
       class="mx-auto my-8 w-[min(100%-28px,860px)] sm:my-14 sm:w-[min(100%-40px,860px)] print:my-0 print:w-full"
     >
@@ -117,10 +32,6 @@
             >
               고건준
             </h1>
-            <p class="mb-5 text-xl font-semibold text-zinc-700 sm:text-2xl">
-              Full-Stack Developer
-            </p>
-
             <div class="space-y-5">
               <div class="space-y-1">
                 <p class="font-semibold text-blue-700">
@@ -207,57 +118,45 @@
           </div>
         </section>
 
-        <section class="mb-11">
-          <div class="grid gap-8 md:grid-cols-2">
-            <div>
-              <h2
-                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
-              >
-                Education
-              </h2>
-              <ul class="space-y-3">
-                <li>
-                  <p class="font-semibold text-zinc-950">건국대학교 졸업</p>
-                  <p class="text-sm text-zinc-500 sm:text-[15px]">
-                    2017.03 ~ 2023.02
-                  </p>
-                </li>
-                <li>
-                  <p class="font-semibold text-zinc-950">
-                    서울 광문고등학교 졸업
-                  </p>
-                  <p class="text-sm text-zinc-500 sm:text-[15px]">
-                    2014.03 ~ 2017.02
-                  </p>
-                </li>
-              </ul>
-            </div>
+        <section class="education-section mb-11">
+          <h2
+            class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+          >
+            Education
+          </h2>
+          <ul class="grid gap-5 md:grid-cols-2">
+            <li>
+              <p class="font-semibold text-zinc-950">건국대학교 졸업</p>
+              <p class="text-sm text-zinc-500 sm:text-[15px]">
+                2017.03 ~ 2023.02
+              </p>
+            </li>
+            <li>
+              <p class="font-semibold text-zinc-950">서울 광문고등학교 졸업</p>
+              <p class="text-sm text-zinc-500 sm:text-[15px]">
+                2014.03 ~ 2017.02
+              </p>
+            </li>
+          </ul>
+        </section>
 
-            <div>
-              <h2
-                class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
-              >
-                Career
-              </h2>
-              <ul class="space-y-3">
-                <li>
-                  <p class="font-semibold text-zinc-950">
-                    플래티어 ECS 부문 EC 솔루션 개발팀
-                  </p>
-                  <p class="text-sm text-zinc-500 sm:text-[15px]">
-                    2025.01.02 ~ 현재
-                  </p>
-                </li>
-                <li>
-                  <p class="font-semibold text-zinc-950">
-                    노아에이티에스 IT 개발
-                  </p>
-                  <p class="text-sm text-zinc-500 sm:text-[15px]">
-                    2023.04.03 ~ 2024.12.31
-                  </p>
-                </li>
-              </ul>
-            </div>
+        <section class="career-section mb-11">
+          <h2
+            class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
+          >
+            Career
+          </h2>
+          <div class="career-list">
+            <career-entry
+              period="2025.01.02 ~ 현재"
+              company="플래티어"
+              department="EC/AX부문 EC솔루션 개발팀"
+            ></career-entry>
+            <career-entry
+              period="2023.04.03 ~ 2024.12.31"
+              company="노아에이티에스"
+              department="사업2본부 SI/SM 팀"
+            ></career-entry>
           </div>
         </section>
 
@@ -305,7 +204,7 @@
           </ul>
         </section>
 
-        <section class="mb-11">
+        <section class="skills-section mb-11">
           <h2
             class="mb-5 border-b border-zinc-300 pb-2 text-2xl font-bold leading-tight text-zinc-950"
           >
@@ -315,23 +214,26 @@
           <div class="space-y-7">
             <div>
               <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">
-                Backend
+                Language
               </h3>
               <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-                <li>Java, Kotlin</li>
-                <li>Spring Boot, MyBatis, JPA</li>
-                <li>MySQL, PostgreSQL, Redis</li>
-                <li>JUnit, k6</li>
+                <li>Java</li>
+                <li>Kotlin</li>
+                <li>JavaScript</li>
               </ul>
             </div>
 
             <div>
               <h3 class="mb-2 text-xl font-bold leading-snug text-zinc-950">
-                Frontend
+                Framework
               </h3>
               <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-                <li>React, Next.js</li>
-                <li>HTML, CSS, JavaScript</li>
+                <li>Spring</li>
+                <li>Spring Boot</li>
+                <li>MyBatis</li>
+                <li>JPA</li>
+                <li>React.js</li>
+                <li>Next.js</li>
                 <li>Nexacro</li>
               </ul>
             </div>
@@ -341,11 +243,11 @@
                 기타
               </h3>
               <ul class="list-disc gap-x-10 space-y-1 pl-5 sm:columns-2">
-                <li>AWS EC2, S3, RDS</li>
-                <li>Docker, Nginx</li>
-                <li>Git/Github, Jenkins</li>
-                <li>Claude code</li>
-                <li>MCP, FastMCP, Custom Skill</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>Redis</li>
+                <li>Docker</li>
+                <li>Claude Code</li>
               </ul>
             </div>
           </div>
@@ -392,8 +294,51 @@
                 </div>
 
                 <div>
-                  <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
-                  <ul class="list-disc space-y-1 pl-5">
+                  <h4 class="mb-2 font-bold text-zinc-950">주요 성과</h4>
+                  <div class="space-y-5">
+                    <div>
+                      <h5 class="mb-2 font-bold text-zinc-950">군인공제회 회원관리시스템 개발</h5>
+                      <ul class="list-disc space-y-2 pl-5">
+                        <li>예금형 목돈수탁 상품의 가입부터 지급, 회계 처리 전까지의 프로세스 개발
+                          <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                            <li>외부 기관 전문, 입금 전문, 금액 계산 로직에서 개별 처리하던 예외를 <strong>Custom Validator 기반으로 공통화</strong>하여 <strong>예외 처리의 일관성 및 유지보수성 향상</strong></li>
+                            <li>가입일자 그룹 단위로 처리하던 프로세스를 <strong>건별 트랜잭션으로 분리</strong>하여 <strong>장애 영향 범위를 축소하고 실패 건 재처리 효율성 개선</strong></li>
+                          </ul>
+                        </li>
+                        <li>예금형 목돈수탁 상품의 집계 및 보고서 기능 개발
+                          <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                            <li>AS-IS 보고 항목을 분석하고 고객 협의를 통해 결산·검증 유형별 집계 기준과 마감·원장 데이터를 정의</li>
+                            <li><strong>SQL 집계 로직 및 OZ Report</strong> 기반 보고서 화면 개발</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h5 class="mb-2 font-bold text-zinc-950">군인공제회 회원관리시스템 운영</h5>
+                      <ul class="list-disc space-y-2 pl-5">
+                        <li>퇴직급여 외 상품(예금형, 적금형, 연금형) 운영 및 유지보수
+                          <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                            <li><strong>약 300건의 업무 요건 및 장애 대응</strong></li>
+                            <li><strong>Jennifer 및 애플리케이션 로그 기반 실시간 모니터링</strong>과 오류 원인 분석</li>
+                          </ul>
+                        </li>
+                        <li>외국인 조세법 도입을 위한 영향도 분석 및 대응 개발
+                          <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                            <li>회계팀과의 협의를 통해 외국조세자 법 적용 기준을 업무 로직으로 구체화</li>
+                            <li>과세 대상 식별 기준, 외국세율 적용 조건, 정산 예외 케이스를 정의하여 테이블 설계 및 세금 정산 로직 개발</li>
+                          </ul>
+                        </li>
+                        <li>실시간 프로세스 안정성 강화
+                          <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                            <li>금융결제원 자동이체 전문 결과 데이터 분석으로 누락된 은행 해지 오류 응답 코드 보완</li>
+                            <li>비과세 한도 체크 로직 현재 시점에서 가입 시점 범위로 수정하여 신청 validation 강화</li>
+                            <li>입금 오류 로그 갱신 시 <strong>FOR UPDATE NOWAIT 기반 비관락 처리</strong>를 적용하여 예외 처리 정확도 및 데드락 방지 구조 개선</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <ul class="hidden">
                     <li>
                       예금형 목돈수탁 상품의 가입부터 지급, 회계 처리 전까지의
                       프로세스 개발
@@ -458,111 +403,43 @@
 
                 <div>
                   <h4 class="mb-3 font-bold text-zinc-950">
-                    주요 이슈 - 가입/지급 프로세스 개선
+                    주요이슈 - 가입 프로세스 개선
                   </h4>
 
                   <div
                     class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                    role="img"
+                    aria-label="가입 프로세스의 개선 전후 비교 다이어그램"
                   >
-                    <div class="grid gap-4 md:grid-cols-2">
-                      <div
-                        class="rounded-md border border-rose-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-rose-700">
-                          AS-IS
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            목돈수탁 가입 서비스
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 여러 서비스 직접 참조
-                          </div>
-                          <div class="grid gap-2">
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              자격 검증 서비스
-                            </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              은행연합회 전문 검증
-                            </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              입금 전문 검증
-                            </div>
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 가입 실행
-                          </div>
-                          <div
-                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
-                          >
-                            N건 가입 = 하나의 트랜잭션
-                          </div>
-                          <p class="text-xs text-zinc-500">
-                            1건 실패 시 전체 롤백, 원인 추적과 별도 처리가
-                            어려움
-                          </p>
+                    <div class="perf-diagram">
+                      <div class="perf-panel as-is">
+                        <div class="perf-panel-title">AS-IS <span>결합·일괄 처리</span></div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">목돈수탁 가입 요청 N건</div>
+                          <div class="perf-node">분산된 검증 서비스 직접 참조</div>
+                          <p class="perf-arrow-note">자격 · 은행연합회 · 입금 전문</p>
+                          <div class="perf-node danger">하나의 통합 트랜잭션</div>
+                          <div class="perf-node danger">1건 실패 → 전체 롤백</div>
                         </div>
+                        <p class="perf-caption">원인 추적과 실패 건의 개별 재처리가 어려움</p>
                       </div>
 
-                      <div
-                        class="rounded-md border border-blue-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-blue-700">
-                          TO-BE
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            목돈수탁 가입 서비스
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 단일 진입점
-                          </div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            Custom Validator
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ validation 재사용
-                          </div>
-                          <div class="grid gap-2">
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              자격 검증
+                      <div class="perf-panel to-be">
+                        <div class="perf-panel-title">TO-BE <span>검증 공통화·건별 처리</span></div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">목돈수탁 가입 요청 N건</div>
+                          <div class="perf-node cache">① Custom Validator 단일 진입점</div>
+                          <div class="perf-branch equal">
+                            <div class="perf-path">
+                              <span class="perf-path-label">VALID</span>
+                              <div class="perf-node">공통 검증 재사용</div>
                             </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              은행연합회 전문 검증
-                            </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              입금 전문 검증
+                            <div class="perf-path miss">
+                              <span class="perf-path-label">EACH</span>
+                              <div class="perf-node redis">② REQUIRES_NEW</div>
                             </div>
                           </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 가입 실행
-                          </div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            Requires_new 전파레벨로 건별 트랜잭션 분리
-                          </div>
-                          <p class="text-xs text-zinc-500">
-                            실패 건만 별도 처리하고 정상 건은 안정적으로 처리
-                          </p>
+                          <div class="perf-node success">정상 건 처리 · 실패 건만 재처리</div>
                         </div>
                       </div>
                     </div>
@@ -572,12 +449,12 @@
                       <h5 class="mb-2 font-semibold text-zinc-900">문제사항</h5>
                       <ul class="list-disc space-y-1 pl-5">
                         <li>
-                          상품 가입 시 유효성 검증 처리가 일관성 없이 흩어져
-                          있어 결합도가 높았고 유지보수의 어려움 존재
+                          상품 가입 시 <strong>유효성 검증 처리가 일관성 없이 분산</strong>되어
+                          결합도가 높았고 유지보수의 어려움 존재
                         </li>
                         <li>
-                          다 건 가입 프로세스가 1건만 실패해도 전체 가입이
-                          실패하여 디버깅이 어렵고 업무 생산성 떨어짐
+                          다 건 가입 프로세스가 <strong>1건만 실패해도 전체 가입이
+                          실패</strong>하여 디버깅이 어렵고 업무 생산성 저하
                         </li>
                       </ul>
                     </div>
@@ -586,16 +463,15 @@
                       <h5 class="mb-2 font-semibold text-zinc-900">해결방법</h5>
                       <ul class="list-disc space-y-1 pl-5">
                         <li>
-                          CustomValidator 도입으로 상품별 전략 서비스로 관리하여
-                          validation 하나의 서비스로 관리
+                          <strong>Custom Validator 도입</strong>으로 상품별 검증을
+                          하나의 서비스에서 관리
                         </li>
                         <li>
-                          트랜잭션 전파레벨을 Requires_new로 설정하여 건별
-                          트랜잭션 분리
+                          트랜잭션 전파 레벨을 <strong>REQUIRES_NEW로 설정하여 건별
+                          트랜잭션 분리</strong>
                         </li>
                         <li>
-                          오류에 대한 메시징 처리를 명확화하여 컬럼에 저장하고
-                          미처리 건에 대한 별도 처리 기능 개발
+                          <strong>오류 메시지 저장 및 미처리 건 별도 처리 기능</strong> 개발
                         </li>
                       </ul>
                     </div>
@@ -604,10 +480,10 @@
                       <h5 class="mb-2 font-semibold text-zinc-900">결과</h5>
                       <ul class="list-disc space-y-1 pl-5">
                         <li>
-                          일일 1,000건 이상, 최대 20,000건 이상의 가입 업무를
-                          안정적으로 처리
+                          <strong>일일 1,000건 이상, 최대 20,000건 이상의 가입 업무를
+                          안정적으로 처리</strong>
                         </li>
-                        <li>고객 업무의 병목을 없애고 생산성 향상</li>
+                        <li><strong>고객 업무 병목 제거 및 생산성 향상</strong></li>
                       </ul>
                     </div>
                   </div>
@@ -617,7 +493,7 @@
 
             <article class="project-page border-b border-zinc-200 pb-12">
               <h3 class="text-xl font-bold leading-snug text-zinc-950">
-                솔루션 개선
+                헤드리스 이커머스 솔루션 개선
               </h3>
               <div class="mt-5 space-y-6">
                 <div>
@@ -642,12 +518,31 @@
                     <li>PostgreSQL</li>
                     <li>MyBatis, JPA</li>
                     <li>Redis</li>
+                    <li>MSA</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h4 class="mb-2 font-bold text-zinc-950">기여한 부분</h4>
-                  <ul class="list-disc space-y-1 pl-5">
+                  <h4 class="mb-2 font-bold text-zinc-950">주요 성과</h4>
+                  <ul class="list-disc space-y-2 pl-5">
+                    <li>회원 유형별(일반, 소셜, 사업자) 회원가입, 검증 로직을 <strong>전략 패턴으로 리팩토링</strong>하여 <strong>유지보수성 향상</strong></li>
+                    <li>이메일 대량 발송 프로세스 <strong>10,000건 기준 처리 성능 10배 개선</strong>
+                      <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                        <li>환경변수와 DB에서 관리하던 이메일 메타정보에 <strong>Redis 캐싱 적용</strong>으로 반복 조회 부하 감소</li>
+                        <li>이메일 발송 프로세스에 <strong>Chunk 단위 Bulk 전송 적용</strong></li>
+                      </ul>
+                    </li>
+                    <li>전시 영역 조회 성능 최적화로 k6 기반 동시 사용자(VU) step-load 시나리오에서 <strong>RPS 약 2배 개선(65 → 120), p95 약 3배 개선(8s → 3.3s)</strong>
+                      <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                        <li>데이터 변경 주기와 화면 특성에 따라 <strong>Redis 기반 Next Cache 및 백엔드 캐싱 적용</strong></li>
+                        <li>Next Cache 항목은 2배의 TTL로 서버 캐싱 적용</li>
+                        <li>Jitter 적용</li>
+                      </ul>
+                    </li>
+                    <li><strong>Circuit Breaker, Rate Limiter 적용</strong>으로 <strong>대규모 환경에서 서버 안정성 향상</strong></li>
+                    <li>기존 RDB보다 행동 데이터 수집에 적합한 <strong>Kafka 기반 ClickHouse 신규 도입</strong></li>
+                  </ul>
+                  <ul class="hidden">
                     <li>
                       회원 파트 개선
                       <ul
@@ -704,111 +599,51 @@
 
                 <div>
                   <h4 class="mb-2 font-bold text-zinc-950">
-                    이슈 사항 - 전시 성능 개선
+                    주요 이슈 — 전시 성능 개선
                   </h4>
 
                   <div
                     class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                    role="img"
+                    aria-label="전시 데이터 조회 구조의 개선 전후 비교 다이어그램"
                   >
-                    <div class="grid gap-4 md:grid-cols-2">
-                      <div
-                        class="rounded-md border border-rose-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-rose-700">
+                    <div class="perf-diagram">
+                      <div class="perf-panel as-is">
+                        <div class="perf-panel-title">
                           AS-IS
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            조회 발생
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-zinc-200 bg-white px-3 py-2"
-                          >
-                            클라이언트
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-zinc-200 bg-white px-3 py-2"
-                          >
-                            백엔드 서버
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 매 요청 조회
-                          </div>
-                          <div
-                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
-                          >
-                            화면에 필요한 값 리턴
-                          </div>
-                          <p class="text-xs text-zinc-500">
-                            반복 조회가 누적되어 주요 화면 트래픽 집중 시 응답이
-                            불안정
-                          </p>
+                          <span>직접 조회 구조</span>
                         </div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">브라우저 요청</div>
+                          <div class="perf-node">백엔드 API</div>
+                          <p class="perf-arrow-note">매 요청마다 DB 조회</p>
+                          <div class="perf-node danger">참조·전시 데이터 조회</div>
+                          <div class="perf-node client">화면 응답</div>
+                        </div>
+                        <p class="perf-caption">
+                          트래픽 집중 시 반복 조회가 누적되어<br />응답 지연 및 연결 불안정 발생
+                        </p>
                       </div>
 
-                      <div
-                        class="rounded-md border border-blue-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-blue-700">
+                      <div class="perf-panel to-be">
+                        <div class="perf-panel-title">
                           TO-BE
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            조회 발생
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-zinc-200 bg-white px-3 py-2"
-                          >
-                            브라우저
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            Next 서버 캐싱 체크
-                          </div>
-                          <div class="grid gap-2 md:grid-cols-2">
-                            <div
-                              class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800"
-                            >
-                              HIT → 바로 리턴
+                          <span>이중 캐시 구조</span>
+                        </div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">브라우저 요청</div>
+                          <div class="perf-node cache">① Next.js Fetch Cache</div>
+                          <div class="perf-branch">
+                            <div class="perf-path hit">
+                              <span class="perf-path-label">HIT</span>
+                              <div class="perf-node success">즉시 응답</div>
                             </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              MISS → 백엔드 서버
+                            <div class="perf-path miss">
+                              <span class="perf-path-label">MISS</span>
+                              <div class="perf-node">백엔드 API</div>
+                              <div class="perf-node redis">② Redis Cache</div>
+                              <div class="perf-node">MISS 시 DB 조회<br />→ 캐시 적재 후 응답</div>
                             </div>
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            Redis 체크
-                          </div>
-                          <div class="grid gap-2 md:grid-cols-2">
-                            <div
-                              class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 text-emerald-800"
-                            >
-                              HIT → 리턴
-                            </div>
-                            <div
-                              class="rounded border border-zinc-200 bg-white px-3 py-2"
-                            >
-                              MISS → 조회 후 캐싱
-                            </div>
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            화면에 필요한 값 리턴
                           </div>
                         </div>
                       </div>
@@ -817,12 +652,12 @@
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
                       솔루션 FO 주요 화면(메인, 상품 상세, 브랜드샵, 기획전)에
-                      트래픽이 몰리는 상황에 연결이 불안정한 문제
+                      <strong>트래픽 집중 시 연결이 불안정</strong>한 문제
                     </li>
                     <li>
                       참조 정보(PG, 아이콘, 카테고리, 마일리지 정책 등)나
                       개인화되어 있지 않고 자주 변하지 않는 기획전, 브랜드샵
-                      데이터가 매번 반복되는 구조로 불필요한 조회 발생
+                      데이터가 매번 반복되는 구조로 <strong>불필요한 조회 발생</strong>
                     </li>
                   </ul>
                 </div>
@@ -832,13 +667,13 @@
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
                       클라이언트와 상호작용이 불필요한 서버 컴포넌트에서
-                      호출되는 참조성 데이터는 Next fetch cache, 서버 Redis
-                      cache 이중 캐싱 적용
+                      호출되는 참조성 데이터는 <strong>Next Fetch Cache와 서버 Redis
+                      Cache의 이중 캐싱 적용</strong>
                     </li>
-                    <li>2배의 TTL로 서버 Redis cache 설정</li>
+                    <li><strong>2배 TTL로 서버 Redis Cache 설정</strong></li>
                     <li>
-                      이외 개인화되지 않고 자주 변하지 않는 전시 데이터는 Redis
-                      Cache만 적용
+                      이외 개인화되지 않고 자주 변하지 않는 전시 데이터에는
+                      <strong>Redis Cache만 적용</strong>
                     </li>
                   </ul>
                 </div>
@@ -846,10 +681,10 @@
                 <div>
                   <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
                   <ul class="list-disc space-y-1 pl-5">
-                    <li>동일 250 VU에서 15분간 step-load test 진행 결과</li>
-                    <li>RPS는 기존 65에서 120으로 약 2배 증가</li>
-                    <li>p95는 기존 8s에서 3.3s로 개선</li>
-                    <li>부하가 없는 상황에도 유저의 전시 UI 경험 개선</li>
+                    <li><strong>250 VU·15분 step-load 테스트</strong> 진행 결과</li>
+                    <li><strong>RPS는 기존 65에서 120으로 약 2배 증가</strong></li>
+                    <li><strong>p95는 기존 8s에서 3.3s로 개선</strong></li>
+                    <li><strong>전시 UI 응답 경험 개선</strong></li>
                   </ul>
                 </div>
               </div>
@@ -857,7 +692,7 @@
 
             <article class="project-page border-b border-zinc-200 pb-12">
               <h3 class="text-xl font-bold leading-snug text-zinc-950">
-                대명 아임레디몰 리뉴얼 프로젝트 캐시백 기능 개선
+                대명 아임레디몰 리뉴얼 프로젝트
               </h3>
               <div class="mt-5 space-y-6">
                 <div>
@@ -886,8 +721,19 @@
                 </div>
 
                 <div>
-                  <h4 class="mb-2 font-bold text-zinc-950">기여한 사항</h4>
-                  <ul class="list-disc space-y-1 pl-5">
+                  <h4 class="mb-2 font-bold text-zinc-950">주요 성과</h4>
+                  <ul class="list-disc space-y-2 pl-5">
+                    <li>프로모션 파트(할인, 쿠폰, 포인트/캐시백) 기능 화면 및 API 개발
+                      <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                        <li>캐시백, 포인트 일괄 지급 시 <strong>Chunk 단위 Bulk 로직 적용</strong>으로 <strong>성능 5배 개선</strong></li>
+                        <li>쿠폰, 포인트, 캐시백 지급 시 <strong>서버 측 검증 로직 추가</strong>로 <strong>중복 및 유효하지 않은 지급 요청 방지</strong></li>
+                        <li>최대 할인 혜택 계산 로직을 분석하고 <strong>공통 코드 기반 신규 할인 유형 계산 로직 추가</strong></li>
+                      </ul>
+                    </li>
+                    <li>최대 적립 혜택 계산 <strong>공통 로직 개발 및 부분 캐싱 적용</strong>으로 공통화 및 성능 개선</li>
+                    <li><strong>스윗트래커 배송 조회 외부 인터페이스 연계</strong> 로직 개발</li>
+                  </ul>
+                  <ul class="hidden">
                     <li>솔루션 베이스 프로모션, 배송 파트 개발</li>
                     <li>
                       프로모션 파트 쿠폰, 포인트, 최대혜택 기능 개발
@@ -925,93 +771,44 @@
 
                 <div>
                   <h4 class="mb-2 font-bold text-zinc-950">
-                    이슈사항 - 캐시백 지급 개선
+                    주요 이슈 — 캐시백 지급 개선
                   </h4>
 
                   <div
                     class="mb-4 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
+                    role="img"
+                    aria-label="캐시백 지급 프로세스의 개선 전후 비교 다이어그램"
                   >
-                    <div class="grid gap-4 md:grid-cols-2">
-                      <div
-                        class="rounded-md border border-rose-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-rose-700">
-                          AS-IS
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            캐시백 지급 요청
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-zinc-200 bg-white px-3 py-2"
-                          >
-                            사용자 조건 로직으로 지급 대상 산정
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 검증 부족
-                          </div>
-                          <div
-                            class="rounded border border-zinc-200 bg-white px-3 py-2"
-                          >
-                            대상별 단건 insert/update 반복
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
-                          >
-                            DB round trip 증가
-                          </div>
-                          <p class="text-xs text-zinc-500">
-                            대량 지급 시 처리 시간이 늘고, DB 기준과 조건 로직
-                            결과가 어긋날 수 있음
-                          </p>
+                    <div class="perf-diagram">
+                      <div class="perf-panel as-is">
+                        <div class="perf-panel-title">AS-IS <span>검증 부족·단건 처리</span></div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">캐시백 지급 요청</div>
+                          <div class="perf-node">사용자 조건으로 대상 산정</div>
+                          <p class="perf-arrow-note">DB 기준 교차 검증 없음</p>
+                          <div class="perf-node danger">대상별 단건 INSERT / UPDATE</div>
+                          <div class="perf-node danger">DB Round Trip 증가</div>
                         </div>
+                        <p class="perf-caption">오지급 가능성과 대량 처리 병목이 함께 존재</p>
                       </div>
 
-                      <div
-                        class="rounded-md border border-blue-200 bg-white p-4"
-                      >
-                        <p class="mb-3 text-sm font-bold text-blue-700">
-                          TO-BE
-                        </p>
-                        <div class="space-y-2 text-sm">
-                          <div
-                            class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                          >
-                            캐시백 지급 요청
+                      <div class="perf-panel to-be">
+                        <div class="perf-panel-title">TO-BE <span>교차 검증·일괄 처리</span></div>
+                        <div class="perf-flow">
+                          <div class="perf-node client">캐시백 지급 요청</div>
+                          <div class="perf-branch equal">
+                            <div class="perf-path">
+                              <span class="perf-path-label">조건</span>
+                              <div class="perf-node cache">사용자 로직 대상</div>
+                            </div>
+                            <div class="perf-path miss">
+                              <span class="perf-path-label">DB</span>
+                              <div class="perf-node redis">지급 가능 대상</div>
+                            </div>
                           </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            사용자 조건 로직 대상 산정
-                          </div>
-                          <div class="text-center text-zinc-400">＋</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            DB 기준 지급 가능 대상 조회
-                          </div>
-                          <div class="text-center text-zinc-400">
-                            ↓ 비교 검증
-                          </div>
-                          <div
-                            class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
-                          >
-                            오지급·누락·중복 발급 방지
-                          </div>
-                          <div class="text-center text-zinc-400">↓</div>
-                          <div
-                            class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                          >
-                            chunk 분할 → bulk insert/update
-                          </div>
-                          <p class="text-xs text-zinc-500">
-                            검증 단계를 추가하면서도 대량 지급 성능 병목 완화
-                          </p>
+                          <div class="perf-node cache">① 대상 비교 Validation</div>
+                          <div class="perf-node success">오지급 · 누락 · 중복 방지</div>
+                          <div class="perf-node redis">② Chunk → Bulk INSERT / UPDATE</div>
                         </div>
                       </div>
                     </div>
@@ -1019,16 +816,16 @@
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
                       회원의 자산과 관련된 기능으로 정확성이 중요하고, 단건씩
-                      지급이 되지만 건수가 많아 성능의 한계도 존재
+                      지급이 되지만 <strong>대량 처리 시 성능 한계</strong>가 존재
                     </li>
                     <li>
-                      대량 지급 데이터를 단건 insert/update 방식으로 처리하면 DB
-                      round trip이 많아지고 처리 시간이 증가한다고 판단
+                      대량 지급 데이터를 <strong>단건 INSERT/UPDATE 방식</strong>으로 처리하면
+                      <strong>DB Round Trip과 처리 시간 증가</strong>
                     </li>
                     <li>
                       지급 대상자는 사용자 조건 로직을 통해 산정되지만, 실제
-                      지급 시점의 DB 데이터와 불일치할 가능성이 있어 지급 전
-                      비교 검증 로직이 필요하다고 판단
+                      지급 시점의 DB 데이터와 불일치할 가능성이 있어 <strong>지급 전
+                      비교 검증 로직</strong> 필요
                     </li>
                   </ul>
                 </div>
@@ -1039,15 +836,15 @@
                     <li>
                       쿠폰 및 마일리지 사용자 발급 시 사용자 조건 로직으로
                       산정된 지급 대상과 실제 DB 기준 지급 가능 대상을 비교하는
-                      검증 로직 추가
+                      <strong>교차 검증 로직 추가</strong>
                     </li>
                     <li>
-                      validation 로직을 백오피스 API에서 한번에 validation 관리
+                      <strong>Validation 로직을 백오피스 API에서 통합 관리</strong>
                     </li>
                     <li>
                       캐시백 및 포인트 일괄 지급 로직에서 지급 대상 데이터를
-                      chunk 단위로 분할하고, 각 chunk마다 bulk insert/update
-                      쿼리를 적용
+                      <strong>Chunk 단위로 분할</strong>하고, 각 Chunk마다
+                      <strong>Bulk INSERT/UPDATE 적용</strong>
                     </li>
                   </ul>
                 </div>
@@ -1056,13 +853,13 @@
                   <h4 class="mb-2 font-bold text-zinc-950">결과</h4>
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
-                      대량 지급 프로세스의 성능 병목을 완화하고, 지급 대상
-                      산정부터 실제 발급까지의 검증 단계를 추가하여
-                      오지급·누락·중복 발급 가능성을 제거했습니다.
+                      <strong>대량 지급 프로세스의 성능 병목 완화</strong>, 지급 대상 산정부터
+                      실제 발급까지 검증 단계를 추가해 <strong>오지급·누락·중복 발급
+                      가능성 제거</strong>
                     </li>
                     <li>
-                      로그 기반 단위 테스트 측정으로 5배 향상되었습니다.
-                      (nanoTime)
+                      로그 기반 단위 테스트(nanoTime) 측정 결과 <strong>처리 성능 5배
+                      향상</strong>
                     </li>
                   </ul>
                 </div>
@@ -1071,93 +868,73 @@
 
             <article class="project-page border-b border-zinc-200 pb-12">
               <h3 class="text-xl font-bold leading-snug text-zinc-950">
-                기타 개발 - Redis 조회 MCP 및 안전 쓰기 Skill 개발
+                Redis 조회 MCP 및 안전 쓰기 Skill 개발
               </h3>
               <div
                 class="mt-5 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
               >
-                <div class="grid gap-4 md:grid-cols-2">
-                  <div class="rounded-md border border-rose-200 bg-white p-4">
-                    <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                    <div class="space-y-2 text-sm">
-                      <div
-                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                      >
-                        AI 에이전트로 Redis 운영 작업 요청
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-zinc-200 bg-white px-3 py-2"
-                      >
-                        조회와 쓰기 작업 경계가 불명확
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-zinc-200 bg-white px-3 py-2"
-                      >
-                        운영 대상, DB 용도, 키 패턴을 수동 확인
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
-                      >
-                        오조회·오삭제·개인정보 노출 위험
-                      </div>
+                <div
+                  class="perf-diagram"
+                  role="img"
+                  aria-label="Redis 운영 도구의 개선 전후 비교 다이어그램"
+                >
+                  <div class="perf-panel as-is">
+                    <div class="perf-panel-title">AS-IS <span>권한 경계 불명확</span></div>
+                    <div class="perf-flow">
+                      <div class="perf-node client">AI 에이전트 작업 요청</div>
+                      <div class="perf-node">조회·쓰기 권한 동시 노출</div>
+                      <div class="perf-node">대상 DB·키 패턴 수동 확인</div>
+                      <div class="perf-node danger">오조회 · 오삭제 · 개인정보 노출</div>
                     </div>
                   </div>
 
-                  <div class="rounded-md border border-blue-200 bg-white p-4">
-                    <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                    <div class="space-y-2 text-sm">
-                      <div
-                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                      >
-                        작업 성격 기준으로 도구 분리
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div class="grid gap-2 md:grid-cols-2">
-                        <div
-                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                        >
-                          조회 → 읽기 전용 MCP
+                  <div class="perf-panel to-be">
+                    <div class="perf-panel-title">TO-BE <span>도구·권한 분리</span></div>
+                    <div class="perf-flow">
+                      <div class="perf-node client">작업 성격 판별</div>
+                      <div class="perf-branch equal">
+                        <div class="perf-path">
+                          <span class="perf-path-label">READ</span>
+                          <div class="perf-node cache">조회 전용 MCP</div>
+                          <div class="perf-node">SCAN · 마스킹 · 결과 상한</div>
                         </div>
-                        <div
-                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                        >
-                          변경 → 안전 쓰기 Skill
+                        <div class="perf-path miss">
+                          <span class="perf-path-label">WRITE</span>
+                          <div class="perf-node redis">안전 쓰기 Skill</div>
+                          <div class="perf-node">dry-run → 확인 → apply</div>
                         </div>
                       </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
-                      >
-                        SCAN 조회, 민감정보 마스킹, 결과 상한 적용
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
-                      >
-                        dry-run 승인 기반 Redis 운영 절차 표준화
-                      </div>
+                      <div class="perf-node success">안전한 Redis 운영 절차 표준화</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mt-5 space-y-6">
                 <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">주요 성과</h4>
+                  <ul class="list-disc space-y-2 pl-5">
+                    <li><strong>Redis MCP 개발</strong>로 <strong>업무 일관성 및 업무 효율성 증대</strong>
+                      <ul class="mt-1 list-[circle] space-y-1 pl-5 text-zinc-700">
+                        <li>Cache, Stream, Rate Limit 등 Redis 데이터를 <strong>자연어 기반의 일관된 프로세스로 조회·관리</strong>할 수 있는 기능 개발</li>
+                        <li>데이터 변경 작업에 <strong>사전 검증 절차 적용</strong>으로 <strong>CUD 작업의 안정성 확보</strong></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div>
                   <h4 class="mb-2 font-bold text-zinc-950">문제 사항</h4>
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
                       Redis가 cache, ratelimit, stream, nextcache 등 여러 용도로
-                      분리되어 있어 어떤 인덱스를 조회해야할지 혼동 존재
+                      분리되어 있어 <strong>조회 대상 인덱스 선택에 혼동</strong> 존재
                     </li>
                     <li>
-                      AI 도구에 Redis 접근을 허용할 때 조회와 쓰기 권한을 함께
-                      열어두면 실수로 데이터가 변경될 위험 존재
+                      AI 도구에 Redis 접근을 허용할 때 <strong>조회와 쓰기 권한을 함께
+                      열어두면 데이터가 변경될 위험</strong> 존재
                     </li>
                     <li>
-                      스트림 DLQ 재처리는 payload 확인, 원본 스트림 재적재, DLQ
-                      정리 작업 등 동일한 단계별 프로세스를 진행할 필요성 존재
+                      스트림 DLQ 재처리는 <strong>Payload 확인 → 원본 스트림 재적재 → DLQ
+                      정리</strong>의 반복 절차가 필요
                     </li>
                   </ul>
                 </div>
@@ -1166,27 +943,27 @@
                   <h4 class="mb-2 font-bold text-zinc-950">도입 내용</h4>
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
-                      FastMCP 기반 Redis 조회 전용 MCP를 자연어를 통한 업무별
-                      데이터 조회 기능 제공
+                      <strong>FastMCP 기반 Redis 조회 전용 MCP</strong>로 자연어 기반
+                      업무별 데이터 조회 기능 제공
                     </li>
                     <li>
-                      KEYS 전체 스캔 대신 SCAN 기반 탐색을 사용하고, 운영 환경
-                      조회 시 질문을 통해 진행 여부 한번 더 체크하도록 구성
+                      KEYS 전체 스캔 대신 <strong>SCAN 기반 탐색</strong>을 사용하고,
+                      운영 환경 조회 전 <strong>사용자 확인 절차</strong> 구성
                     </li>
                     <li>
-                      조회 결과 반환 전 이메일·전화번호 등 민감정보 마스킹과
-                      길이 제한을 적용하여 노출 범위 최소화
+                      조회 결과 반환 전 <strong>민감정보 마스킹과 결과 길이 제한</strong>을
+                      적용하여 노출 범위 최소화
                     </li>
                     <li>
-                      Redis CUD 작업은 Custom Skill로 분리하여 dry-run → 사용자
-                      확인 → apply 흐름을 강제
+                      Redis CUD 작업은 <strong>Custom Skill로 분리</strong>하여
+                      <strong>dry-run → 사용자 확인 → apply</strong> 흐름을 강제
                     </li>
                     <li>
-                      KEYS 기반 일괄 데이터 조작 작업은 스크립트 레벨에서 거부
+                      <strong>KEYS 기반 일괄 데이터 조작을 스크립트 레벨에서 차단</strong>
                     </li>
                     <li>
-                      Python 표준 라이브러리 기반 RESP 클라이언트를 구현하여
-                      redis-cli나 Docker 없이도 Redis 작업 진행
+                      <strong>Python 표준 라이브러리 기반 RESP 클라이언트 구현</strong>으로
+                      redis-cli나 Docker 없이 Redis 작업 진행
                     </li>
                   </ul>
                 </div>
@@ -1195,99 +972,62 @@
 
             <article class="project-page">
               <h3 class="text-xl font-bold leading-snug text-zinc-950">
-                기타 개발 - harness-update skill 개발
+                harness-update skill 개발
               </h3>
               <div
                 class="mt-5 rounded-lg border border-zinc-300 bg-zinc-50 p-4"
               >
-                <div class="grid gap-4 md:grid-cols-2">
-                  <div class="rounded-md border border-rose-200 bg-white p-4">
-                    <p class="mb-3 text-sm font-bold text-rose-700">AS-IS</p>
-                    <div class="space-y-2 text-sm">
-                      <div
-                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                      >
-                        custom MCP / plugin / skill 사용
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-zinc-200 bg-white px-3 py-2"
-                      >
-                        각 도구 버전 직접 확인
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-zinc-200 bg-white px-3 py-2"
-                      >
-                        마켓플레이스 / Git 저장소 수동 비교
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-zinc-200 bg-white px-3 py-2"
-                      >
-                        pull / reinstall 명령 수동 실행
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-rose-200 bg-rose-50 px-3 py-2 font-semibold text-rose-800"
-                      >
-                        업데이트 누락 및 반복 작업 발생
-                      </div>
+                <div
+                  class="perf-diagram"
+                  role="img"
+                  aria-label="공통 도구 업데이트 절차의 개선 전후 비교 다이어그램"
+                >
+                  <div class="perf-panel as-is">
+                    <div class="perf-panel-title">AS-IS <span>수동 업데이트</span></div>
+                    <div class="perf-flow">
+                      <div class="perf-node client">MCP · Plugin · Skill 사용</div>
+                      <div class="perf-node">각 도구 버전 직접 확인</div>
+                      <div class="perf-node">Marketplace · Git 수동 비교</div>
+                      <div class="perf-node">pull · reinstall 수동 실행</div>
+                      <div class="perf-node danger">업데이트 누락 · 반복 작업</div>
                     </div>
                   </div>
 
-                  <div class="rounded-md border border-blue-200 bg-white p-4">
-                    <p class="mb-3 text-sm font-bold text-blue-700">TO-BE</p>
-                    <div class="space-y-2 text-sm">
-                      <div
-                        class="rounded border border-zinc-200 bg-zinc-50 px-3 py-2 font-semibold"
-                      >
-                        harness-update skill 실행
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                      >
-                        Python 스크립트로 버전 수집
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div class="grid gap-2 md:grid-cols-2">
-                        <div
-                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
-                        >
-                          마켓플레이스 ↔ 로컬 비교
+                  <div class="perf-panel to-be">
+                    <div class="perf-panel-title">TO-BE <span>비교·업데이트 자동화</span></div>
+                    <div class="perf-flow">
+                      <div class="perf-node client">harness-update Skill 실행</div>
+                      <div class="perf-node cache">① Python으로 버전 수집</div>
+                      <div class="perf-branch equal">
+                        <div class="perf-path">
+                          <span class="perf-path-label">MARKET</span>
+                          <div class="perf-node">Marketplace ↔ Local</div>
                         </div>
-                        <div
-                          class="rounded border border-blue-200 bg-blue-50 px-3 py-2"
-                        >
-                          Git 최신 형상 ↔ 로컬 비교
+                        <div class="perf-path miss">
+                          <span class="perf-path-label">GIT</span>
+                          <div class="perf-node redis">Latest ↔ Local</div>
                         </div>
                       </div>
-                      <div class="text-center text-zinc-400">
-                        ↓ 차이가 있을 때만
-                      </div>
-                      <div
-                        class="rounded border border-blue-200 bg-blue-50 px-3 py-2 font-semibold text-blue-800"
-                      >
-                        pull / reinstall 자동 실행
-                      </div>
-                      <div class="text-center text-zinc-400">↓</div>
-                      <div
-                        class="rounded border border-emerald-200 bg-emerald-50 px-3 py-2 font-semibold text-emerald-800"
-                      >
-                        리턴값만 출력하여 토큰 사용량 최소화
-                      </div>
+                      <div class="perf-node cache">② 차이 발생 시 자동 업데이트</div>
+                      <div class="perf-node success">결과만 반환 · 토큰 사용 최소화</div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="mt-5 space-y-6">
                 <div>
+                  <h4 class="mb-2 font-bold text-zinc-950">주요 성과</h4>
+                  <ul class="list-disc space-y-2 pl-5">
+                    <li><strong>harness-update Skill 개발</strong>을 통한 <strong>팀 공통 Skill 관리 간소화</strong></li>
+                    <li>팀 공통 Skill의 <strong>형상 관리 및 업데이트 절차 자동화</strong>로 <strong>팀원별 작업 환경의 일관성과 최신성 확보</strong></li>
+                  </ul>
+                </div>
+                <div>
                   <h4 class="mb-2 font-bold text-zinc-950">문제 사항</h4>
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
-                      Claude Code를 사용하여 custom MCP나 외부 plugin을 사용할
-                      때 자동으로 업데이트가 되지 않고 일괄 수동 업데이트해야
+                      Claude Code에서 custom MCP나 외부 plugin 사용 시
+                      <strong>자동 업데이트가 지원되지 않아 일괄 수동 업데이트</strong>해야
                       하는 불편함 존재
                     </li>
                   </ul>
@@ -1297,22 +1037,21 @@
                   <h4 class="mb-2 font-bold text-zinc-950">도입 내용</h4>
                   <ul class="list-disc space-y-1 pl-5">
                     <li>
-                      Python 스크립트 기반으로 MCP, plugin, skill 업데이트하는
-                      Custom skill 도입
+                      <strong>Python 스크립트 기반으로 MCP·Plugin·Skill을 업데이트하는
+                      Custom Skill 도입</strong>
                     </li>
                     <li>
-                      마켓플레이스와 로컬 버전을 비교하여 다를 시 업데이트
+                      <strong>Marketplace와 로컬 버전을 비교</strong>하여 차이가 있을 때만 업데이트
                     </li>
                     <li>
-                      Git 레포의 최신 형상과 로컬 형상을 비교하여 다를 시 pull
-                      및 재설치 커맨드 동작
+                      <strong>Git 최신 형상과 로컬 형상을 비교</strong>하여 차이가 있을 때
+                      <strong>pull 및 재설치 자동 실행</strong>
                     </li>
-                    <li>토큰 사용량 최적화</li>
+                    <li><strong>토큰 사용량 최적화</strong></li>
                     <li>
-                      단순 스크립트를 돌리고 해당 스크립트의 리턴값만 출력하게
-                      하여 출력 토큰 최소화
+                      스크립트의 <strong>리턴값만 출력</strong>하여 출력 토큰 최소화
                     </li>
-                    <li>적은 비용의 모델로 동작하도록 스킬 구성</li>
+                    <li><strong>저비용 모델에서도 동작</strong>하도록 Skill 구성</li>
                   </ul>
                 </div>
               </div>
@@ -1321,5 +1060,7 @@
         </section>
       </main>
     </article>
+    <script src="./js/components.js" defer></script>
+    <script src="./js/main.js" defer></script>
   </body>
 </html>
